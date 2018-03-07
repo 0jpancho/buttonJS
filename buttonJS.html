@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>Button JS</title>
+        <link rel="stylesheet" href="buttonStyles.css" type="text/css">
+    </head>
+    <body>
+
+        <section id="bb1" class="bigbox">
+            <h3 class="subtitle">Challenge 1</h3>
+            <div class="content">
+                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+            </div>
+            <button onclick="nightMode()">Night Mode</button>
+        </section>
+
+        <section id="bb2" class="bigbox">
+            <h3 class="subtitle">Challenge 2</h3>
+            <div class="content">
+                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+            </div>
+            <button onclick="toggleDayNight()">Toggle Day/Night Mode</button>
+        </section>
+
+        <section id="bb3" class="bigbox">
+            <h3 class="subtitle">Challenge 3</h3>
+            <div class="content gp">
+                <p>Gramps</p>
+                <div class="p">
+                    <p>Pops</p>
+                    <div class="c">
+                        <p>Me</p>
+                    </div>
+                    <div class="c">
+                        <p>Bro</p>
+                    </div>
+                </div>
+            </div>
+            <button onclick="bloodLine()">The Family Blood Line</button>
+        </section>
+
+        <section id="bb4" class="bigbox">
+            <h3 class="subtitle">Challenge 4</h3>
+            <div class="content poo">
+                <ul>
+                    <li>thing 1</li>
+                    <li>thing 2</li>
+                    <li class="fish">one fish</li>
+                    <li class="fish">two fish</li>
+                    <li class="fish">red fish</li>
+                    <li class="fish">blue fish</li>
+                </ul>
+            </div>
+            <button onclick="fish()">Technicolor Fish</button>
+        </section>
+
+        <section id="bb5" class="bigbox">
+            <h3 class="subtitle">Challenge 5</h3>
+            <div class="content">
+                <span>20</span>
+            </div>
+            <br>
+            <button onclick="math()">+1</button>
+            <button onclick="math2()">+10</button>
+        </section>
+        <button onclick="tiger()">MAGIC</button>
+        <button onclick="largeText()">MAGICX2</button>
+
+        <section id="bb6" class="bigbox">
+            <h3 class="subtitle">Challenge 6</h3>
+            <div class="content">
+                <span></span>
+            </div>
+            <br>
+            <button onclick="randoColor()">Rando</button>
+        </section>
+        <button onclick="nasty()">NAstY</button>
+    </body>
+    <script type="text/javascript">
+        //type your code for each button below the series of comments.  All javascript must be inside the script-tags
+        //function 1
+        function nightMode(){
+          const doc = document;
+          let section1 = doc.querySelector('#bb1');
+          let subtitle = doc.querySelector('#bb1 > h3');
+          let words = doc.querySelector('#bb1 > div > p');
+          section1.style.backgroundColor = "black";
+          subtitle.style.color = 'white';
+          words.style.color = 'white';
+        }
+        //function 2
+        function toggleDayNight(){
+            const doc = document;
+            let sectionOne = doc.querySelector('#bb2');
+            sectionOne.classList.toggle("nightMode");
+        }
+
+        //function 3
+        function bloodLine(){
+          const doc = document;
+          let gpa= doc.querySelector('#bb3 > .gp');
+          let pops = doc.querySelector('#bb3 > .gp > .p');
+          let sibling= doc.querySelectorAll('#bb3 > .gp > .p > .c');
+          gpa.style.backgroundColor ='#550000' ;
+          pops.style.backgroundColor = '#991100' ;
+          sibling[0].style.backgroundColor = '#dd1111';
+          sibling[1].style.backgroundColor = '#dd1111';
+        }
+        //function 4
+        function fish(){
+          const doc = document;
+          let fish = doc.querySelectorAll('.fish');
+          fish[0].style.color = "green";
+          fish[1].style.color = "orange";
+          fish[2].style.color = "red";
+          fish[3].style.color = "blue";
+        }
+        //function 5
+        function math(){
+            const doc = document;
+            //let span = doc.getElementByTagName('span');
+            let updatedNumber = Number(doc.querySelector('span').innerHTML);
+            updatedNumber++;
+            doc.querySelector('span').innerHTML = updatedNumber;
+        }
+        //function 6
+        function math2(){
+            const doc = document;
+            //let span = doc.getElementByTagName('span');
+            let updatedNumber = Number(doc.querySelector('span').innerHTML);
+            updatedNumber = updatedNumber + 10;
+            doc.querySelector('span').innerHTML = updatedNumber;
+        }
+        //function 7 (fun stuff)
+        function tiger(){
+            const doc = document;
+            let section = doc.querySelectorAll("section");
+            for (var t = 0; t < section.length; t++) {
+                section[t].classList.toggle("tiger");
+            }
+        }
+
+        function largeText(){
+            const doc = document;
+            let section6 = doc.querySelectorAll('.bigbox');
+            for (var i = 0; i < section6.length; i++) {
+                section6[i].classList.toggle('big');
+            }
+        }
+
+        function randoColor(){
+            const doc = document;
+            let rainbow = doc.querySelector('#bb6');
+            let firstNumber = String(Math.floor(Math.random() * 10));
+            let secondNumber = String(Math.floor(Math.random() * 10));
+            let thirdNumber = String(Math.floor(Math.random() * 10));
+            let fourthNumber = String(Math.floor(Math.random() * 10));
+            let fifthNumber = String(Math.floor(Math.random() * 10));
+            let sixthNumber = String(Math.floor(Math.random() * 10));
+            let colorNumber = firstNumber + secondNumber + thirdNumber + fourthNumber + fifthNumber + sixthNumber;
+            rainbow.style.backgroundColor = "#"+colorNumber;
+        }
+        function nasty(){
+            const doc = document;
+            let uno;
+            let dos;
+            let tres;
+            let quatro;
+            let cinco;
+            let seis;
+            let rainbow2 = doc.querySelectorAll('.bigbox');
+            let divv = doc.querySelectorAll('.subtitle');
+            let div2 = doc.querySelectorAll('div');
+
+            for (var k = 0; k < rainbow2.length; k++) {
+
+                uno = String(Math.floor(Math.random() * 10));
+                dos = String(Math.floor(Math.random() * 10));
+                tres = String(Math.floor(Math.random() * 10));
+                quatro = String(Math.floor(Math.random() * 10));
+                cinco = String(Math.floor(Math.random() * 10));
+                seis = String(Math.floor(Math.random() * 10));
+                let number = uno + dos + tres + quatro + cinco + seis;
+                rainbow2[k].style.backgroundColor = "#"+number;
+            }
+            for (var i = 0; i < divv.length; i++) {
+                uno = String(Math.floor(Math.random() * 10));
+                dos = String(Math.floor(Math.random() * 10));
+                tres = String(Math.floor(Math.random() * 10));
+                quatro = String(Math.floor(Math.random() * 10));
+                cinco = String(Math.floor(Math.random() * 10));
+                seis = String(Math.floor(Math.random() * 10));
+                let number = uno + dos + tres + quatro + cinco + seis;
+                divv[i].style.color = "#"+number;
+            }
+            for (var l = 0; l < div2.length; l++) {
+                uno = String(Math.floor(Math.random() * 10));
+                dos = String(Math.floor(Math.random() * 10));
+                tres = String(Math.floor(Math.random() * 10));
+                quatro = String(Math.floor(Math.random() * 10));
+                cinco = String(Math.floor(Math.random() * 10));
+                seis = String(Math.floor(Math.random() * 10));
+                let number = uno + dos + tres + quatro + cinco + seis;
+                div2[l].style.backgroundColor = '#'+number;
+            }
+        }
+    </script>
+</html>
